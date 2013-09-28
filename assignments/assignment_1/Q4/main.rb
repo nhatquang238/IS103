@@ -1,5 +1,5 @@
 # Project Phase 1, Q4
-# You may modify this file for testing purposes, 
+# You may modify this file for testing purposes,
 # but your final q4.rb must be able to run with the original main.rb.
 
 load "utility.rb"
@@ -14,10 +14,9 @@ read_file("CSV files/unsorted_restaurant_names1.csv").each{ |line|
 }
 
 # perform sorting
-qsort(names, 0, names.length-1) 
+qsort(names, 0, names.length-1)
 
 # print out the sorted names
 for i in 0..names.length-1
   p i.to_s + " : " + names[i]
 end
-
