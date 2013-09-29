@@ -1,3 +1,10 @@
+# this code working under the assumption that every column of pixel
+# in the fill area must be continuous. That means if two to-be-filled
+# vertically continuous set of pixels in a same column is separated
+# by a vertically continuous set of not-to-be-filled pixels then that
+# two set of pixels are treated as two columns of pixel in the
+# fill area
+
 def fill_area(x,y,fill_color, ori_color)
 	points = []
 	# nearest up point
@@ -9,7 +16,7 @@ def fill_area(x,y,fill_color, ori_color)
 	# nearest right point
 	points[3] = [x+1, y]
 
-	for i in 0..points.length
+	for i in 0..points.length-1
 
 		surround_x = points[i][0]
 		surround_y = points[i][1]
