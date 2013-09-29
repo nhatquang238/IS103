@@ -16,7 +16,16 @@ read_file("CSV files/unsorted_restaurant_names1.csv").each{ |line|
 # perform sorting
 qsort(names, 0, names.length-1)
 
+array = [523,1,13,63,214,6134,632]
+# p "length: " + array.length.to_s
+# qsort(array, 0, array.length - 1)
+p partition(array, 0, array.length - 1)
+
+# for i in 0..array.length - 1
+# 	p array[i]
+# end
+
 # print out the sorted names
-for i in 0..names.length-1
-  p i.to_s + " : " + names[i]
-end
+# for i in 0..names.length-1
+#   p i.to_s + " : " + names[i]
+# end

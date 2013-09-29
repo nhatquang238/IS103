@@ -18,7 +18,7 @@ def partition(a, p, r)
   while true
     loop { j = j - 1; break if a[j] <= x }
     loop { i = i + 1; break if a[i] >= x }
-    if i < j                  
+    if i < j
       a[i], a[j] = a[j], a[i]  # perform swap
     else
       return j
