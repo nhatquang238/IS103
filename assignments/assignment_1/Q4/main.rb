@@ -9,7 +9,7 @@ load "q4.rb"
 names = []  # array of restaurant names read from unsorted_restaurant_names.csv
 
 # modify the CSV file name here to change the source of restaurant names
-read_file("CSV files/unsorted_restaurant_names1.csv").each{ |line|
+read_file("CSV files/unsorted_restaurant_names1_v2.csv").each{ |line|
   array = line.split(",")
   names << array[0].to_s
 }
