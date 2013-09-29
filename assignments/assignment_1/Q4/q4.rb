@@ -3,7 +3,7 @@
 
 # inputs: a = array of strings to be sorted, lower and upper are the boundary markers
 def qsort(a, lower, upper)
-  if lower < upper
+  if lower + 9 < upper
     mid = partition(a, lower, upper)
     qsort(a, lower, mid)
     qsort(a, mid+1, upper)
@@ -25,3 +25,20 @@ def partition(a, p, r)
     end
   end
 end
+
+def isort(a)
+  for i in 2..a.length
+    key = a[i]
+    j = i - 1
+    while j > 0 and a[j] > key
+      a[j+1] = a[i]
+      j = j - 1
+    end
+    a[j + 1] = key
+  end
+  puts a
+end
+
+numbers = [234,13,23,5,1,53,523]
+
+isort(numbers)
