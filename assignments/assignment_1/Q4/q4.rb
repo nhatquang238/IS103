@@ -8,6 +8,7 @@ def qsort(a, lower, upper)
     qsort(a, lower, mid)
     qsort(a, mid+1, upper)
   end
+  isort(a)
   return a
 end
 
@@ -27,18 +28,13 @@ def partition(a, p, r)
 end
 
 def isort(a)
-  for i in 2..a.length
+  for i in 1..a.length-1
     key = a[i]
-    j = i - 1
-    while j > 0 and a[j] > key
-      a[j+1] = a[i]
+    j = i
+    while j > 0 and a[j - 1] > key
+      a[j] = a[j - 1]
       j = j - 1
     end
-    a[j + 1] = key
+    a[j] = key
   end
-  puts a
 end
-
-numbers = [234,13,23,5,1,53,523]
-
-isort(numbers)
