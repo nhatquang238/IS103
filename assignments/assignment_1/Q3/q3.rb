@@ -12,7 +12,7 @@ def bsearch(a, k)
   lower = -1
   upper = a.length
 
-  while lower + 1< upper
+  while lower + 1 < upper
     mid = (lower + upper)/2
     if k < a[mid]
       upper = mid
@@ -20,6 +20,9 @@ def bsearch(a, k)
       lower = mid
     end
   end
-  return lower if k == a[lower]
-  return nil if k != a[lower]
+  if k != a[lower]
+    return nil
+  else
+    return lower
+  end
 end
