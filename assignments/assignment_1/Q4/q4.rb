@@ -5,10 +5,6 @@
 
 # inputs: a = array of strings to be sorted, lower and upper are the boundary markers
 def qsort(a, lower, upper)
-  if (lower + 9 >= upper)
-    isort(a)
-    return a
-  end
   order = Array.new(2)
   order[0] = lower
   order[1] = upper
@@ -16,7 +12,14 @@ def qsort(a, lower, upper)
   while (order.any?)
     r = order[count]
     l = order[count-1]
-    next if (r <= l) 
+
+    if (r <= l+9) 
+      if (r>l) then isort(a,l,r) end
+      order[count] = nil
+      order[count-1] = nil
+      count-=2
+      next
+    end
     mid = partition(a, l, r)
     if (count+3>order.size)
       temp = Array.new(order.size*2)
@@ -47,8 +50,8 @@ def partition(a, p, r)
   i = p
   j = r + 1
   while true
-    loop { j = j - 1; break if a[j] <= x }
-    loop { i = i + 1; break if a[i] > x }
+    loop { j = j - 1; break if a[j] <= x || j == p }
+    loop { i = i + 1; break if a[i] > x || i == r }
     if i < j
       a[i], a[j] = a[j], a[i]  # perform swap
     else
@@ -59,8 +62,8 @@ def partition(a, p, r)
 
 end
 
-def isort(a)
-  for i in 1..a.length-1
+def isort(a,lower,upper)
+  for i in lower+1..upper
     key = a[i]
     j = i
     while j > 0 and a[j - 1] > key
