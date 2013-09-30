@@ -16,7 +16,7 @@ read_file("CSV files/sorted_restaurant_names1_v2.csv").each{ |line|
 
 # modify this statement to perform a search
 # the index of the name should be printed out if the name is found
-keyIndex = bsearch(names, "ZOUK\r")
+keyIndex = bsearch(names, "THE ROLLING PIN BAKERY\r")
 p keyIndex
 # p names
 puts "key is found at " + keyIndex.to_s
