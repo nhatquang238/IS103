@@ -1,5 +1,7 @@
-# Both methods are taken from your textbook
-# "Explorations in Computing" by John S Connery (2011), Chapter 5, p.124
+#   Section : G3 (Mon)
+#   Team ID : 21
+#   Name of Team member 1: Pham Minh Khoa
+#   Name of Team member 2: Nguyen Nhat Quang
 
 # inputs: a = array of strings to be sorted, lower and upper are the boundary markers
 def qsort(a, lower, upper)

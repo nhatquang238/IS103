@@ -1,5 +1,7 @@
-# all case - duplicated letter - duplicated number - duplicated both number and letter
-a = 52*52*10*10*28*5! - 52*1*10*9*28*5!/2! - 52*51*10*1*28*5!/2! - 52*1*10*1*28*5!/(2!*2!)
+# a 5C2 ways to choose positions for alphabetic,
+# 3C2 ways to choose positions for numeric,
+# 1 way for special char
+a = 52^2*10^2*28*5C2*3C2
 
 # bi AB or BA
 bi = 4!*4!*2
