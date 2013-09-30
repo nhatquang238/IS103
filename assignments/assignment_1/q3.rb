@@ -31,13 +31,10 @@ def bsearch(a, k)
   lower = 0
   upper = a.length-1
 
-  while lower + 1 < upper
-    # base 37 is used because we have 26 alphabetic letters,
-    # 1 special character (white space),
-    # and 10 numeric characters
+  while lower + 1< upper
     temp1 = a[upper][0]*37 - a[lower][0]*37 + a[upper][1] - a[lower][1]
     temp2 = k[0]*37 + k[1] - a[lower][0]*37 - a[lower][1]
-    # mid = 0
+    mid = 0
 
     if (temp2!=0 && temp1!=0)
       # Use interpolation search for the first two characters if the "lower" two characters
